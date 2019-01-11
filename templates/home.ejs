@@ -1,0 +1,4 @@
+<%- include( 'header', { title: 'Home', config } ); %>
+<%- include( 'post-content', { post: posts[0] } ); %>
+<%- include( 'related', { posts: posts.slice( 1, 5 ), dayjs } ); %>
+<%- include( 'footer', { config } ); %>

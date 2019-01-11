@@ -1,0 +1,25 @@
+{
+  "name": "wordpress-com-static-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "policy": "node src/policy.js",
+    "publish": "node src/publish-manual.js"
+  },
+  "files": [
+    "config.js",
+    "index.js",
+    "src/*.js",
+    "templates/*.ejs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.382.0",
+    "claudia-api-builder": "^4.1.1",
+    "dayjs": "^1.7.8",
+    "ejs": "^2.6.1",
+    "wpapi": "^1.1.2"
+  }
+}

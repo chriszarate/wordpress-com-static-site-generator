@@ -1,0 +1,6 @@
+<%- include( 'header', { config, title: 'Archive' } ); %>
+<h2>Archive</h2>
+<% posts.forEach( post => { %>
+<p><%- include( 'post-link', { post, dayjs } ); %></p>
+<% } ); %>
+<%- include( 'footer', { config } ); %>

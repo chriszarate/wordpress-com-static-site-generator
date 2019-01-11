@@ -1,0 +1,11 @@
+<article itemscope itemtype="http://schema.org/BlogPosting">
+	<header>
+		<h2 itemprop="headline"><%- post.title.rendered %></h2>
+	</header>
+	<%- post.content.rendered %>
+	<footer>
+		<a href="<%= post.slug %>">Link</a>
+		#
+		<time datetime="<%= post.date %>" itemprop="datePublished"><%= dayjs( post.date ).format( 'MMMM D, YYYY' ) %></time>
+	</footer>
+</article>

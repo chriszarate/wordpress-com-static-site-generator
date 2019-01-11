@@ -1,0 +1,7 @@
+<nav>
+	<h4>More</h4>
+<% posts.forEach( post => { %>
+	<p><%- include( 'post-link', { post, dayjs } ); %></p>
+<% } ); %>
+	<p><strong><a href="archive" class="archive-link">Archive</a></strong></p>
+</nav>
