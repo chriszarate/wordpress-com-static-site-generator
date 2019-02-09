@@ -3,15 +3,4 @@
 <h2><%- page.title.rendered %></h2>
 <%- page.content.rendered %>
 </article>
-<%- include( 'footer', { config } ); %>
-
-		</main>
-
-		<footer>
-			<nav>
-				<p><a href="archive">Archive</a></p>
-			</nav>
-		</footer>
-
-	</body>
-</html>
+<%- include( 'footer', { archive: true } ); %>

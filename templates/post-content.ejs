@@ -4,8 +4,6 @@
 	</header>
 	<%- post.content.rendered %>
 	<footer>
-		<a href="<%= post.slug %>">Link</a>
-		#
-		<time datetime="<%= post.date %>" itemprop="datePublished"><%= dayjs( post.date ).format( 'MMMM D, YYYY' ) %></time>
+		<%- include( 'post-link', { post, title: 'Link', dayjs } ); %>
 	</footer>
 </article>

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "DEBUG=true node src/publish-manual.js",
     "policy": "node src/policy.js",
     "publish": "node src/publish-manual.js"
   },

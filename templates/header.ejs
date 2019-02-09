@@ -37,7 +37,7 @@
 				height: 1px;
 				left: -10000px;
 				overflow: hidden;
-				position:absolute;
+				position: absolute;
 				top: auto;
 				width: 1px;
 			}
@@ -46,13 +46,9 @@
 				color: #00c;
 			}
 
+			header,
 			nav {
 				margin: 2em 0;
-			}
-
-			nav h4,
-			nav p {
-				margin: 0.5em 0;
 			}
 
 			main,
@@ -61,15 +57,7 @@
 			}
 
 			article footer {
-				color: #666;
 				font-size: 0.9em;
-			}
-
-			article header {
-				border-bottom: solid 1px #333;
-				margin: 2em 0;
-				padding: 0 2em;
-				text-align: center;
 			}
 
 			article img {
@@ -81,21 +69,23 @@
 				color: #666;
 			}
 
-			.archive-link::before {
-				content: '+';
-				display: 'inline';
+			time::before {
+				content: '# ';
 			}
 
-			.logo {
+			header nav a {
 				display: block;
 				height: 64px;
-				margin: 0 auto;
 				transition: transform 0.2s linear;
 				width: 64px;
 			}
 
-			.logo:hover {
+			header nav a:hover {
 				transform: scale( 1.25 );
+			}
+
+			footer nav a::before {
+				content: '+';
 			}
 		</style>
 	</head>
@@ -105,7 +95,7 @@
 		<header>
 			<h1>Chris Zarate</h1>
 			<nav>
-				<a href="<%= 'Home' === title ? 'about' : './' %>" aria-label="<%= 'Home' === title ? 'About' : 'Home' %>" class="logo">
+				<a href="<%= 'Home' === title ? 'about' : './' %>" aria-label="<%= 'Home' === title ? 'About' : 'Home' %>">
 					<%- include( 'logo' ); %>
 				</a>
 			</nav>

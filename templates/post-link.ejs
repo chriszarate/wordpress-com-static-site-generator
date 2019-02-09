@@ -1,2 +1,2 @@
-<a href="<%= post.slug %>"><%- post.title.rendered %></a>
-<time datetime="<%= post.date %>"><%= dayjs( post.date ).format( 'MMM YY' ) %></time>
+<a href="<%= post.slug %>"><%- title %></a>
+<time datetime="<%= post.date %>" itemprop="datePublished"><%= dayjs( post.date ).format( 'MMM YYYY' ) %></time>

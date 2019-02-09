@@ -12,15 +12,18 @@ const { getPosts, getPages } = require( './wp' );
 const writeFile = util.promisify( fs.writeFile );
 
 const publishHtml = async ( templateName, fileName, data, ContentType = 'text/html' ) => {
-	const htmlPath = `/tmp/${fileName}`;
-	const jsonPath = `${htmlPath}.json`;
-
 	// Pass in some helpers.
 	const html = await renderTemplate( templateName, { ...data, config, dayjs } );
 
 	// For local testing.
-	await writeFile( htmlPath, html );
-	await writeFile( jsonPath, JSON.stringify( data ) );
+	if ( process.env.DEBUG ) {
+		const debugPath = `./test/${fileName.replace( /\.html$/, '' )}`;
+
+		await writeFile( `${debugPath}.html`, html );
+		await writeFile( `${debugPath}.json`, JSON.stringify( data ) );
+
+		return;
+	}
 
 	// Publish HTML to S3.
 	console.log( `Publishing ${fileName}...` );
@@ -48,7 +51,9 @@ module.exports = async () => {
 	await Promise.all( pages.map( page => publishHtml( 'page', page.slug, { page } ) ) );
 
 	// Invalidate the cache.
-	await invalidate();
+	if ( ! process.env.DEBUG ) {
+		await invalidate();
+	}
 
 	return { message: 'updated' };
 };
