@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "DEBUG=true node src/publish-manual.js",
     "policy": "node src/policy.js",
-    "publish": "node src/publish-manual.js"
+    "publish": "node src/publish-manual.js",
+    "setup": "npx claudia create --region us-east-1 --api-module index",
+    "update": "npx claudia update"
   },
   "files": [
     "config.js",

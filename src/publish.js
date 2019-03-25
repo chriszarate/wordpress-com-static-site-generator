@@ -43,11 +43,10 @@ module.exports = async () => {
 
 	// Render aggregation pages.
 	await publishHtml( 'home', 'index.html', { posts } );
-	await publishHtml( 'archive', 'archive', { posts } );
 	await publishHtml( 'feed', 'feed', { posts }, 'application/atom+xml' );
 
 	// Render posts and pages.
-	await Promise.all( posts.map( post => publishHtml( 'post', post.slug, { post } ) ) );
+	await Promise.all( posts.map( post => publishHtml( 'post', post.slug, { post, posts } ) ) );
 	await Promise.all( pages.map( page => publishHtml( 'page', page.slug, { page } ) ) );
 
 	// Invalidate the cache.

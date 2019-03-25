@@ -1,10 +1,23 @@
 		</main>
 
 		<% if ( archive ) { %>
-		<footer>
+		<footer class="archive">
 			<nav>
-				<strong><a href="archive">Archive</a></strong>
+				<% posts.forEach( post => { %>
+				<p class="<%= postId === post.id ? 'current' : '' %>">
+					<a href="<%= post.slug %>"><%- post.title.rendered %></a>
+					<% post.tags.filter( tagId => config.tagMap.hasOwnProperty( tagId ) ).forEach( tagId => { %>
+					<span class="tag" aria-label="<%= config.tagMap[ tagId ].label %>"><%= config.tagMap[ tagId ].display %></span>
+					<% } ); %>
+				</p>
+				<% } ); %>
 			</nav>
+		</footer>
+		<% } %>
+
+		<% if ( about ) { %>
+		<footer id="about" class="about">
+			<p>I am <a href="mailto:&#099;&#104;&#114;&#105;&#115;&#064;&#122;&#097;&#114;&#097;&#116;&#101;&#046;&#111;&#114;&#103;">&#099;&#104;&#114;&#105;&#115;&#064;&#122;&#097;&#114;&#097;&#116;&#101;&#046;&#111;&#114;&#103;</a> and I make <a href="https://github.com/chriszarate">www things</a>.</p>
 		</footer>
 		<% } %>
 

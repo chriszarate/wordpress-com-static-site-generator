@@ -15,7 +15,7 @@ publish or update a post (or page) on wordpress.com. It will look a lot like
 2. Create the webhook on AWS:
 
 ```sh
-npx claudia create --region us-east-1 --api-module index
+npm run setup
 ```
 
 3. Give the Lambda function permission to write to your S3 bucket.

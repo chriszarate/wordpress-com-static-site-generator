@@ -1,9 +1,9 @@
 <article itemscope itemtype="http://schema.org/BlogPosting">
 	<header>
-		<h2 itemprop="headline"><%- post.title.rendered %></h2>
+		<h1 itemprop="headline"><%- post.title.rendered %></h1>
 	</header>
-	<%- post.content.rendered %>
+	<%- post.content.rendered.replace( /\s+style="[^"]+"/g, '' ) %>
 	<footer>
-		<%- include( 'post-link', { post, title: 'Link', dayjs } ); %>
+		<p><%- include( 'post-date', { post, dayjs } ); %></p>
 	</footer>
 </article>

@@ -1,6 +1,6 @@
 <%- include( 'header', { title: page.title.rendered, config } ); %>
 <article>
-<h2><%- page.title.rendered %></h2>
-<%- page.content.rendered %>
+<h1><%- page.title.rendered %></h1>
+<%- page.content.rendered.replace( /\s+style="[^"]+"/g, '' ) %>
 </article>
-<%- include( 'footer', { archive: true } ); %>
+<%- include( 'footer', { about: false, archive: false } ); %>
