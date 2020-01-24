@@ -22,15 +22,27 @@
 				regrets, i have a few
 			*/
 
-			:root{
+			:root {
 				--color-bg: #fff;
 				--color-code: #ff9;
 				--color-link: #b03;
 				--color-nav: #666;
+				--color-text: #111;
+			}
+
+			@media (prefers-color-scheme: dark) {
+				:root {
+					--color-bg: #111;
+					--color-code: #606;
+					--color-link: #e00;
+					--color-nav: #aaa;
+					--color-text: #fff;
+				}
 			}
 
 			html {
 				background-color: var( --color-bg );
+				color: var( --color-text );
 				line-height: 1.4;
 				margin: 0 1em;
 			}
