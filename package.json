@@ -19,7 +19,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.382.0",
+    "aws-sdk": "^2.814.0",
     "claudia-api-builder": "^4.1.1",
     "dayjs": "^1.7.8",
     "ejs": "^2.6.1",
